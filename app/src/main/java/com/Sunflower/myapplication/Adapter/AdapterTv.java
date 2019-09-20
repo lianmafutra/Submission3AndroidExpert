@@ -24,12 +24,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.HolderData> {
+public class AdapterTv extends RecyclerView.Adapter<AdapterTv.HolderData> {
 
     private List<MovieResults> mList;
     private Context ctx;
 
-    public AdapterMovie(Context ctx, List<MovieResults> mList) {
+    public AdapterTv(Context ctx, List<MovieResults> mList) {
         this.ctx = ctx;
         this.mList = mList;
     }
@@ -46,9 +46,11 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.HolderData> 
     public void onBindViewHolder(final HolderData holder, int position) {
         final MovieResults dm = mList.get(position);
 
-        holder.txt_movie.setText(dm.getOriginalTitle());
-        holder.txt_date.setText(dm.getReleaseDate());
+
+        holder.txt_movie.setText(dm.getOriginalName());
+        holder.txt_date.setText(dm.getFirstAirDate());
         holder.txt_desc.setText(dm.getOverview());
+
         String imagePath = "https://image.tmdb.org/t/p/w185" + dm.getPosterPath();
 
         Glide.with(ctx)
@@ -89,11 +91,11 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.HolderData> 
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(ctx, MovieDetail.class);
-                    intent.putExtra("title", dm.getOriginalTitle());
-                    intent.putExtra("date", dm.getReleaseDate());
+                    intent.putExtra("title", dm.getOriginalName());
+                    intent.putExtra("date", dm.getFirstAirDate());
                     intent.putExtra("desc", dm.getOverview());
                     intent.putExtra("img", dm.getPosterPath());
-                    intent.putExtra("type","1");
+                    intent.putExtra("type","2");
                     ctx.startActivity(intent);
                 }
             });

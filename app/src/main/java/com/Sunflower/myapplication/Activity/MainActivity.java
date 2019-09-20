@@ -15,14 +15,15 @@ import com.Sunflower.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
+    Fragment fragment;
+    String lang;
     Bundle bundle = new Bundle();
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
+
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                     bundle = new Bundle();
                     bundle.putString("type", "2");
                     fragment.setArguments(bundle);
-
                     return true;
             }
             return false;
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_change_settings) {

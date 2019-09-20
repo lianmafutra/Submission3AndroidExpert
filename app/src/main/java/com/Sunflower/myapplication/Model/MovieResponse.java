@@ -1,54 +1,65 @@
 package com.Sunflower.myapplication.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class MovieResponse {
 
     @SerializedName("page")
-    private String page;
-
-    @SerializedName("total_results")
-    private String total_results;
-
+    private int page;
 
     @SerializedName("total_pages")
-    private String total_pages;
-
+    private int totalPages;
 
     @SerializedName("results")
-    private String results;
+    private List<MovieResults> results;
 
+    @SerializedName("total_results")
+    private int totalResults;
 
-    public String getPage() {
-        return page;
-    }
-
-    public void setPage(String page) {
+    public void setPage(int page){
         this.page = page;
     }
 
-    public String getTotal_results() {
-        return total_results;
+    public int getPage(){
+        return page;
     }
 
-    public void setTotal_results(String total_results) {
-        this.total_results = total_results;
+    public void setTotalPages(int totalPages){
+        this.totalPages = totalPages;
     }
 
-    public String getTotal_pages() {
-        return total_pages;
+    public int getTotalPages(){
+        return totalPages;
     }
 
-    public void setTotal_pages(String total_pages) {
-        this.total_pages = total_pages;
+    public void setResults(List<MovieResults> results){
+        this.results = results;
     }
 
-    public String getResults() {
+    public List<MovieResults> getResults(){
         return results;
     }
 
-    public void setResults(String results) {
-        this.results = results;
+    public void setTotalResults(int totalResults){
+        this.totalResults = totalResults;
+    }
+
+    public int getTotalResults(){
+        return totalResults;
+    }
+
+    @Override
+    public String toString(){
+        return
+                "ResponseMovie{" +
+                        "page = '" + page + '\'' +
+                        ",total_pages = '" + totalPages + '\'' +
+                        ",results = '" + results + '\'' +
+                        ",total_results = '" + totalResults + '\'' +
+                        "}";
     }
 
 
