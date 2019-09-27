@@ -3,209 +3,116 @@ package com.Sunflower.myapplication.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.json.JSONObject;
 
 public class MovieResults implements Parcelable {
-    @SerializedName("overview")
-    private String overview;
-
-    @SerializedName("original_language")
-    private String originalLanguage;
-
-    @SerializedName("original_title")
-    private String originalTitle;
-
-
-    public String getOriginalName() {
-        return originalName;
-    }
-
-    public void setOriginalName(String originalName) {
-        this.originalName = originalName;
-    }
-
-    @SerializedName("original_name")
-    private String originalName;
-
-    public String getFirstAirDate() {
-        return firstAirDate;
-    }
-
-    public void setFirstAirDate(String firstAirDate) {
-        this.firstAirDate = firstAirDate;
-    }
-
-    @SerializedName("first_air_date")
-    private String firstAirDate;
-
-    @SerializedName("video")
-    private boolean video;
-
-    @SerializedName("title")
+    private String vote_count;
+    private Double vote_average;
     private String title;
+    private Double popularity;
+    private String original_language;
+    private String overview;
+    private String release_date;
+    private String photo;
+    private String banner;
 
-    @SerializedName("genre_ids")
-    private List<Integer> genreIds;
-
-    @SerializedName("poster_path")
-    private String posterPath;
-
-    @SerializedName("backdrop_path")
-    private String backdropPath;
-
-    @SerializedName("release_date")
-    private String releaseDate;
-
-    @SerializedName("popularity")
-    private double popularity;
-
-    @SerializedName("vote_average")
-    private double voteAverage;
-
-    @SerializedName("id")
-    private int id;
-
-    @SerializedName("adult")
-    private boolean adult;
-
-    @SerializedName("vote_count")
-    private int voteCount;
-
-    public void setOverview(String overview){
-        this.overview = overview;
+    public String getBanner() {
+        return banner;
     }
 
-    public String getOverview(){
-        return overview;
+    public void setBanner(String banner) {
+        this.banner = banner;
     }
 
-    public void setOriginalLanguage(String originalLanguage){
-        this.originalLanguage = originalLanguage;
+    public String getVote_count() {
+        return vote_count;
     }
 
-    public String getOriginalLanguage(){
-        return originalLanguage;
+    public void setVote_count(String vote_count) {
+        this.vote_count = vote_count;
     }
 
-    public void setOriginalTitle(String originalTitle){
-        this.originalTitle = originalTitle;
+    public Double getVote_average() {
+        return vote_average;
     }
 
-    public String getOriginalTitle(){
-        return originalTitle;
+    public void setVote_average(Double vote_average) {
+        this.vote_average = vote_average;
     }
 
-    public void setVideo(boolean video){
-        this.video = video;
-    }
-
-    public boolean isVideo(){
-        return video;
-    }
-
-    public void setTitle(String title){
-        this.title = title;
-    }
-
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public void setGenreIds(List<Integer> genreIds){
-        this.genreIds = genreIds;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public List<Integer> getGenreIds(){
-        return genreIds;
-    }
-
-    public void setPosterPath(String posterPath){
-        this.posterPath = posterPath;
-    }
-
-    public String getPosterPath(){
-        return posterPath;
-    }
-
-    public void setBackdropPath(String backdropPath){
-        this.backdropPath = backdropPath;
-    }
-
-    public String getBackdropPath(){
-        return backdropPath;
-    }
-
-    public void setReleaseDate(String releaseDate){
-        this.releaseDate = releaseDate;
-    }
-
-    public String getReleaseDate(){
-        return releaseDate;
-    }
-
-    public void setPopularity(double popularity){
-        this.popularity = popularity;
-    }
-
-    public double getPopularity(){
+    public Double getPopularity() {
         return popularity;
     }
 
-    public void setVoteAverage(double voteAverage){
-        this.voteAverage = voteAverage;
+    public void setPopularity(Double popularity) {
+        this.popularity = popularity;
     }
 
-    public double getVoteAverage(){
-        return voteAverage;
+    public String getOriginal_language() {
+        return original_language;
     }
 
-    public void setId(int id){
-        this.id = id;
+    public void setOriginal_language(String original_language) {
+        this.original_language = original_language;
     }
 
-    public int getId(){
-        return id;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setAdult(boolean adult){
-        this.adult = adult;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
-    public boolean isAdult(){
-        return adult;
+    public String getRelease_date() {
+        return release_date;
     }
 
-    public void setVoteCount(int voteCount){
-        this.voteCount = voteCount;
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
     }
 
-    public int getVoteCount(){
-        return voteCount;
+    public String getPhoto() {
+        return photo;
     }
 
-    @Override
-    public String toString(){
-        return
-                "ResultsItemMovie{" +
-                        "overview = '" + overview + '\'' +
-                        ",original_language = '" + originalLanguage + '\'' +
-                        ",original_title = '" + originalTitle + '\'' +
-                        ",video = '" + video + '\'' +
-                        ",title = '" + title + '\'' +
-                        ",genre_ids = '" + genreIds + '\'' +
-                        ",poster_path = '" + posterPath + '\'' +
-                        ",backdrop_path = '" + backdropPath + '\'' +
-                        ",release_date = '" + releaseDate + '\'' +
-                        ",popularity = '" + popularity + '\'' +
-                        ",vote_average = '" + voteAverage + '\'' +
-                        ",id = '" + id + '\'' +
-                        ",adult = '" + adult + '\'' +
-                        ",vote_count = '" + voteCount + '\'' +
-                        "}";
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public MovieResults(JSONObject object) {
+        try {
+            String vote_count = object.getString("vote_count");
+            Double vote_average = object.getDouble("vote_average");
+            String title = object.getString("title");
+            Double popularity = object.getDouble("popularity");
+            String original_language = object.getString("original_language");
+            String overview = object.getString("overview");
+            String release_date = object.getString("release_date");
+            String poster_path = object.getString("poster_path");
+            String backdrop_path = object.getString("backdrop_path");
+
+            this.vote_count = vote_count;
+            this.vote_average = vote_average;
+            this.title = title;
+            this.popularity = popularity;
+            this.original_language = original_language;
+            this.overview = overview;
+            this.release_date = release_date;
+            this.photo = poster_path;
+            this.banner = backdrop_path;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -215,48 +122,30 @@ public class MovieResults implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.overview);
-        dest.writeString(this.originalLanguage);
-        dest.writeString(this.originalTitle);
-        dest.writeString(this.originalName);
-        dest.writeString(this.firstAirDate);
-        dest.writeByte(this.video ? (byte) 1 : (byte) 0);
+        dest.writeString(this.vote_count);
+        dest.writeValue(this.vote_average);
         dest.writeString(this.title);
-        dest.writeList(this.genreIds);
-        dest.writeString(this.posterPath);
-        dest.writeString(this.backdropPath);
-        dest.writeString(this.releaseDate);
-        dest.writeDouble(this.popularity);
-        dest.writeDouble(this.voteAverage);
-        dest.writeInt(this.id);
-        dest.writeByte(this.adult ? (byte) 1 : (byte) 0);
-        dest.writeInt(this.voteCount);
-    }
-
-    public MovieResults() {
-    }
+        dest.writeValue(this.popularity);
+        dest.writeString(this.original_language);
+        dest.writeString(this.overview);
+        dest.writeString(this.release_date);
+        dest.writeString(this.photo);
+        dest.writeString(this.banner);
+}
 
     protected MovieResults(Parcel in) {
-        this.overview = in.readString();
-        this.originalLanguage = in.readString();
-        this.originalTitle = in.readString();
-        this.originalName = in.readString();
-        this.firstAirDate = in.readString();
-        this.video = in.readByte() != 0;
+        this.vote_count = in.readString();
+        this.vote_average = (Double) in.readValue(Double.class.getClassLoader());
         this.title = in.readString();
-        this.genreIds = new ArrayList<Integer>();
-        in.readList(this.genreIds, Integer.class.getClassLoader());
-        this.posterPath = in.readString();
-        this.backdropPath = in.readString();
-        this.releaseDate = in.readString();
-        this.popularity = in.readDouble();
-        this.voteAverage = in.readDouble();
-        this.id = in.readInt();
-        this.adult = in.readByte() != 0;
-        this.voteCount = in.readInt();
+        this.popularity = (Double) in.readValue(Double.class.getClassLoader());
+        this.original_language = in.readString();
+        this.overview = in.readString();
+        this.release_date = in.readString();
+        this.photo = in.readString();
+        this.banner = in.readString();
     }
 
-    public static final Parcelable.Creator<MovieResults> CREATOR = new Parcelable.Creator<MovieResults>() {
+    public static final Creator<MovieResults> CREATOR = new Creator<MovieResults>() {
         @Override
         public MovieResults createFromParcel(Parcel source) {
             return new MovieResults(source);

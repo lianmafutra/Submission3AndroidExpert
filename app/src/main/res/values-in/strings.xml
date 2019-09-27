@@ -3,7 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_tv">Film</string>
-    <string name="title_movie">Acara Tv</string>
+    <string name="title_tv">Acara Tv</string>
+    <string name="title_movie">Film</string>
     <string name="lang">Ganti Bahasa</string>
 </resources>

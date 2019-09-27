@@ -1,23 +1,22 @@
 package com.Sunflower.myapplication.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.Sunflower.myapplication.Fragment.FragmentMovie;
+import com.Sunflower.myapplication.Fragment.FragmentTv;
 import com.Sunflower.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     Fragment fragment;
-    String lang;
-    Bundle bundle = new Bundle();
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -32,19 +31,13 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.container_layout, fragment, fragment.getClass().getSimpleName())
                             .commit();
-                    bundle = new Bundle();
-                    bundle.putString("type", "1");
-                    fragment.setArguments(bundle);
                     return true;
                 case R.id.navigation_dashboard:
 
-                    fragment = new FragmentMovie();
+                    fragment = new FragmentTv();
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.container_layout, fragment, fragment.getClass().getSimpleName())
                             .commit();
-                    bundle = new Bundle();
-                    bundle.putString("type", "2");
-                    fragment.setArguments(bundle);
                     return true;
             }
             return false;

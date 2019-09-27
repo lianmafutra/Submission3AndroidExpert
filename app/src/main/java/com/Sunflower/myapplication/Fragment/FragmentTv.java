@@ -12,51 +12,51 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Sunflower.myapplication.Adapter.AdapterMovie;
-import com.Sunflower.myapplication.Model.MovieResults;
+import com.Sunflower.myapplication.Adapter.AdapterTv;
+import com.Sunflower.myapplication.Model.TvResults;
 import com.Sunflower.myapplication.R;
-import com.Sunflower.myapplication.viewModel.MovieViewModel;
+import com.Sunflower.myapplication.viewModel.TvViewModel;
 
 import java.util.ArrayList;
 
 
-public class FragmentMovie extends Fragment {
+public class FragmentTv extends Fragment {
 
-    private AdapterMovie adapter;
+    private AdapterTv adapter;
 
     private ProgressBar progressBar;
-    private MovieViewModel moviesViewModel;
+    private TvViewModel tvViewModel;
 
 
 
-    public FragmentMovie() {
+    public FragmentTv() {
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        adapter = new AdapterMovie();
-        View view = inflater.inflate(R.layout.fragment_fragment_movie,container,false);
-        RecyclerView recyclerView = view.findViewById(R.id.rv_movie);
+        adapter = new AdapterTv();
+        View view = inflater.inflate(R.layout.fragment_fragment_tv,container,false);
+        RecyclerView recyclerView = view.findViewById(R.id.rv_tv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.setAdapter(adapter);
 
         progressBar = view.findViewById(R.id.progressBar);
 
-        moviesViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
-        moviesViewModel.getMovies().observe(this, getMovie);
-        moviesViewModel.setMovies("EXTRA_MOVIE");
+        tvViewModel = ViewModelProviders.of(this).get(TvViewModel.class);
+        tvViewModel.getTv().observe(this, getTv);
+        tvViewModel.setTv("EXTRA_TV");
 
         showLoading(true);
 
         return view;
     }
 
-    private Observer<ArrayList<MovieResults>> getMovie = new Observer<ArrayList<MovieResults>>() {
+    private Observer<ArrayList<TvResults>> getTv = new Observer<ArrayList<TvResults>>() {
         @Override
-        public void onChanged(ArrayList<MovieResults> movies) {
-            if (movies != null) {
-                adapter.setData(movies);
+        public void onChanged(ArrayList<TvResults> tv) {
+            if (tv != null) {
+                adapter.setData(tv);
             }
 
             showLoading(false);
@@ -71,6 +71,7 @@ public class FragmentMovie extends Fragment {
             progressBar.setVisibility(View.GONE);
         }
     }
+
 
 
 }
